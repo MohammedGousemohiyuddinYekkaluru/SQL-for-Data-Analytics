@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-### [0 : Database Overview](https://github.com/MohammedGousemohiyuddinYekkaluru/Excel-for-Data-Analytics/tree/main/1_Spreadsheets_)
+### [0 : Database Overview](https://github.com/MohammedGousemohiyuddinYekkaluru/SQL-for-Data-Analytics/tree/main/Database%20Overview)
 
 - About Contoso Data
 - customer Info
