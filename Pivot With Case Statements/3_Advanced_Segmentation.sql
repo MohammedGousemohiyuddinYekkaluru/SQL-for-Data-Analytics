@@ -123,3 +123,46 @@ GROUP BY
 	p.categoryname
 ORDER BY
 	p.categoryname;
+
+/*
+Multiple WHEN Clauses in CASE
+- Segmenting Orders by Percentiles
+*/
+
+/*
+- "Low" for revenue below 25th percentile
+- "Medium" for revenue between 25th & 75th percentile
+- "High" for revenue above 75th percentile
+
+Aggregate total net revenue for each category and tier using SUM(quantity * netprice * exchangerate)
+Group the results by categoryname and revenue_tier for meaningful segmentation
+*/
+
+WITH percentiles AS (
+	SELECT
+		PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY (quantity * netprice * exchangerate)) AS revenue_25th_percentile,
+		PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY (quantity * netprice * exchangerate)) AS revenue_75th_percentile
+	FROM sales
+	WHERE 
+		orderdate BETWEEN '2022-01-01' AND '2023-12-31'
+)
+
+SELECT
+	p.categoryname AS category,
+	CASE
+		WHEN (s.quantity * s.netprice * s.exchangerate) <= pctl.revenue_25th_percentile THEN '3 - LOW'
+		WHEN (s.quantity * s.netprice * s.exchangerate) >= pctl.revenue_75th_percentile THEN '1 - HIGH'
+		ELSE '2 - MEDIUM'
+	END AS revenue_tier,
+	SUM(s.quantity * s.netprice * s.exchangerate) AS total_revenue
+FROM 
+	sales s
+	LEFT JOIN product p ON s.productkey = p.productkey,
+	percentiles AS pctl
+GROUP BY p.categoryname, revenue_tier
+ORDER BY p.categoryname, revenue_tier;
+
+
+
+
+
