@@ -14,3 +14,10 @@
 
 - Basic Aggregations
 - Statistical Aggregations
+- Advanced Segementation
+
+### [2 : Date Time Functions](https://github.com/MohammedGousemohiyuddinYekkaluru/SQL-for-Data-Analytics/tree/main/Date%20Time)
+
+- Date Format
+- Date Filtering
+- Date Differences
