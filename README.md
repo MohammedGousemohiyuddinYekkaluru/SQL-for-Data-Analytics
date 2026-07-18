@@ -28,3 +28,4 @@
 - OVER()
 - Cohort Analysis
 - Aggregation Functions with Window Functions
+- Ranking
