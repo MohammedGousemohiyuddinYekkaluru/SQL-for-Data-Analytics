@@ -29,3 +29,4 @@
 - Cohort Analysis
 - Aggregation Functions with Window Functions
 - Ranking
+- LAG, LEAD
