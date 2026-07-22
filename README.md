@@ -31,3 +31,8 @@
 - Ranking
 - LAG, LEAD
 - Frame Clause
+
+### [4 : Views](https://github.com/MohammedGousemohiyuddinYekkaluru/SQL-for-Data-Analytics/tree/main/Views)
+
+- Daily Revenue view
+- Cohort analysis view
