@@ -36,3 +36,4 @@
 
 - Daily Revenue view
 - Cohort analysis view
+- Customer Revenue by Cohort
