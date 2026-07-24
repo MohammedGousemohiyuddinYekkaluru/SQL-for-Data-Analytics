@@ -37,3 +37,7 @@
 - Daily Revenue view
 - Cohort analysis view
 - Customer Revenue by Cohort
+
+### [5 : Data Cleaning](https://github.com/MohammedGousemohiyuddinYekkaluru/SQL-for-Data-Analytics/tree/main/Data%20Cleaning)
+
+- Handling Nulls | COALESCE & NULLIF
